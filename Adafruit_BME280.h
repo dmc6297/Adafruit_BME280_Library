@@ -130,7 +130,7 @@ class Adafruit_BME280
     Adafruit_BME280(int8_t cspin);
     Adafruit_BME280(int8_t cspin, int8_t mosipin, int8_t misopin, int8_t sckpin);
 
-    bool  begin(uint8_t addr = BME280_ADDRESS);
+    bool  begin(uint8_t addr = BME280_ADDRESS, int8_t = 2, int8_t =14);
     float readTemperature(void);
     float readPressure(void);
     float readHumidity(void);

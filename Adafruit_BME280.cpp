@@ -38,12 +38,12 @@ Adafruit_BME280::Adafruit_BME280(int8_t cspin, int8_t mosipin, int8_t misopin, i
 { }
 
 
-bool Adafruit_BME280::begin(uint8_t a) {
+bool Adafruit_BME280::begin(uint8_t a, int8_t sda, int8_t scl) {
   _i2caddr = a;
 
   if (_cs == -1) {
     // i2c
-    Wire.begin(2,14);
+    Wire.begin(sda, scl);
   } else {
     digitalWrite(_cs, HIGH);
     pinMode(_cs, OUTPUT);
